@@ -1,0 +1,78 @@
+  .student-card {
+    display: inline-block;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    max-width: 100%;
+    border: 1px solid #ffeeee;
+    word-wrap: break-word;
+  }
+
+  .btn-download {
+    background-color: #be123c;
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.55rem;
+  }
+
+  .xls-download {
+    background-color: #1D6F42;
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.55rem;
+  }
+
+
+  .type-gantry {
+    width: 90px;
+    color: #0022ff;
+    // height: 30px;
+    justify-content: center;
+    align-items: center;
+    // background-color: #c5cdff;
+    border-radius: 25px;
+    font-size: 13px;
+    white-space: nowrap;
+
+    @media only screen and (max-width: 1260px) {
+      background-color: transparent;
+      padding: 0;
+      align-items: left;
+    }
+  }
+
+  .type-blackboard {
+    // width: 90px;
+    color: #925ada;
+    // height: 30px;
+    justify-content: center;
+    align-items: center;
+    // background-color: #e3cdff;
+    border-radius: 25px;
+    font-size: 13px;
+    white-space: nowrap;
+
+    @media only screen and (max-width: 1260px) {
+      background-color: transparent;
+      padding: 0;
+      align-items: left;
+    }
+  }
+
+  .student-card {
+    flex-grow: 1;
+  }
+
+  .moduleCode-wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  .download-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }

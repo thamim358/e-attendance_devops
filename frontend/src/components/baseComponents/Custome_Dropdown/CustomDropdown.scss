@@ -1,0 +1,80 @@
+.custom-dropdown {
+    position: relative;
+  
+    .dropdown-trigger {
+      cursor: pointer;
+    }
+  
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      // background-image: linear-gradient(to bottom right,
+      // #ecf9ff 0%, #e2f5fd 25%, #e2f5fe 50%, #d9f3fe 75%, #ccf0ff 100%);
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) {
+    .custom-dropdown .dropdown-menu {
+      left: 50%;
+      border-radius: 38px;
+      transform: translateX(-50%);
+      max-width: 90vw;
+      max-height: 80dvh;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .custom-dropdown .dropdown-menu {
+      max-width: 94vw;
+    }
+  
+    .calendars div.calendar {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .calendar-grid {
+      gap: 3px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .custom-dropdown .dropdown-menu {
+      max-width: 90vw;
+      overflow-y: scroll;
+      max-height: 60vh;
+    }
+  
+    .calendars div.calendar {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .calendar-grid {
+      gap: 3px;
+      margin-left: 16px;
+    }
+  }
+  
+  @media only screen and (max-width: 378px) {
+    .custom-dropdown .dropdown-menu {
+      width: 338px;
+    }
+  
+    .calendars div.calendar {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .calendar-grid {
+      margin-left: 0;
+    }
+  }
+  

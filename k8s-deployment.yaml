@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: e-attendance
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: e-attendance
+  template:
+    metadata:
+      labels:
+        app: e-attendance
+    spec:
+      containers:
+      - name: e-attendance
+        image: thamim358/e_attendance:latest
+        ports:
+        - containerPort: 8080
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: e-attendance-service
+spec:
+  selector:
+    app: e-attendance
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer

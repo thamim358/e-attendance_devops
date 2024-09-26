@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+    
+    environment {
+        DOCKER_REPO = "thamim358"
+        DOCKER_IMAGE = "e_attendance"
+        KUBE_CONFIG = credentials('eks-kubeconfig') // Jenkins credentials for EKS Kubeconfig
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Fetch the code from source control
+                checkout scm
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image with the application code
+                    docker.build("${DOCKER_REPO}/${DOCKER_IMAGE}:${env.BUILD_NUMBER}")
+                }
+            }
+        }
+        
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    // Push the Docker image to Docker Hub
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+                        docker.image("${DOCKER_REPO}/${DOCKER_IMAGE}:${env.BUILD_NUMBER}").push()
+                    }
+                }
+            }
+        }
+        
+        stage('Deploy to EKS') {
+            steps {
+                script {
+                    // Apply Kubernetes manifests and update the image in the deployment
+                    sh """
+                    export KUBECONFIG=\${KUBE_CONFIG}
+                    kubectl apply -f k8s-deployment.yaml
+                    kubectl set image deployment/e-attendance e-attendance=${DOCKER_REPO}/${DOCKER_IMAGE}:${env.BUILD_NUMBER}
+                    """
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+
+// Start :: Includes
+@import './includes/variables';
+@import './mixin/breakpoints';
+
+// Start :: Group Components
+// @import './components/groupComponents/navbar';
+// @import './components/baseComponents/table.scss';
+
+#root {
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+}
+
+
+.ant-picker {
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+}
+
+.ant-picker-dropdown .ant-picker-header-view {
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+}
+
+.ant-picker-dropdown .ant-picker-date-panel .ant-picker-body {
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+}
+
+.ant-picker-dropdown .ant-picker-panel-container .ant-picker-panel .ant-picker-content {
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+}
+
+.ant-picker-dropdown .ant-picker-ranges {
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+    color: #000;
+}
+
+.ant-picker-now-btn {
+    color: #000;
+}
+
+.ant-picker-now-btn:hover {
+    color: #d11648;
+}
+
+.ant-picker-dropdown .ant-picker-ranges:hover {
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+    color: #d11648;
+}
+
+.ant-btn-primary {
+    background-color: #9f1238;
+    font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+}
+
+.ant-btn-primary:hover {
+    background-color: #d11648 !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected:not(.ant-picker-cell-disabled) .ant-picker-cell-inner {
+    color: #fff;
+    background-color: #9f1238;
+}
+
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+    border: 1px solid #9f1238;
+}
+
+.ant-picker-dropdown .ant-picker-header-view>button:hover {
+    color: #d11648 !important;
+}   

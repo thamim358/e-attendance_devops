@@ -1,0 +1,77 @@
+/* Screen Size Definations
+=============================== */
+$screen-sm: 640px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1280px;
+$screen-2xl: 1536px;
+
+/* Mixins - min width
+================================ */
+@mixin media-min-sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin media-min-md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin media-min-lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin media-min-xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+@mixin media-min-2xl {
+  @media (min-width: #{$screen-2xl}) {
+    @content;
+  }
+}
+
+/* Mixins - max width
+================================ */
+@mixin media-max-sm {
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin media-max-md {
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin media-max-lg {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin media-max-xl {
+  @media (max-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+@mixin media-max-2xl {
+  @media (max-width: #{$screen-2xl}) {
+    @content;
+  }
+}
+
+@mixin media-print {
+  @media print {
+    @content;
+  }
+}

@@ -1,0 +1,205 @@
+.ant-pagination .ant-pagination-item {
+  background-color: #dcdcdc;
+  border: 1px solid #1a1a1a;
+  color: #fff !important;
+  padding: 10px;
+  width: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.ant-pagination .ant-pagination-item {
+  background-color: #fff;
+  border: 1px solid #8e8e8e;
+
+  a {
+    color: #8e8e8e;
+  }
+}
+
+.ant-pagination .ant-pagination-item-active {
+  background-color: #fff3f6;
+  border-color: #be123c;
+  color: #be123c !important;
+
+  a {
+    color: #be123c;
+  }
+
+  :hover {
+    border-color: #be123c;
+  }
+}
+
+.ant-pagination .ant-pagination-item .ant-pagination-item-active {
+  font-family: 'Montserrat' !important;
+}
+
+.custom-pagination-font .ant-pagination-item-active {
+  background-color: #fff !important;
+  border-color: #be123c !important;
+}
+
+.custom-pagination-font .ant-pagination-item-active:hover {
+  background-color: #fff !important;
+  border-color: #000 !important;
+}
+
+.custom-pagination-font .ant-pagination-item:hover {
+  background-color: #fff !important;
+}
+
+.custom-pagination-font .ant-pagination-item-active:hover a {
+  color: #000 !important;
+}
+
+.custom-placeholder .ant-select-selection-placeholder,
+.custom-placeholder .ant-picker-input input::placeholder {
+  color: #999;
+  /* Change to your desired placeholder color */
+}
+
+.attendance-gantry {
+  width: 120px;
+  color: #0022ff;
+  display: flex;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  background-color: #c5cdff;
+  border-radius: 25px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  @media only screen and (max-width: 1260px) {
+    background-color: transparent;
+    padding: 0;
+    align-items: left;
+  }
+}
+
+.attendance-blackboard {
+  width: 120px;
+  color: #925ada;
+  display: flex;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3cdff;
+  border-radius: 25px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  @media only screen and (max-width: 1260px) {
+    background-color: transparent;
+    padding: 0;
+    align-items: left;
+  }
+}
+
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+  font-family: 'Montserrat';
+  font-weight: 500;
+}
+
+.ant-select-dropdown {
+  z-index: 10;
+  font-family: 'Montserrat';
+}
+
+.ant-dropdown {
+  .ant-picker-outlined:focus-within {
+    border-color: none;
+    box-shadow: none;
+    outline: 0;
+    background-color: #ffffff;
+  }
+
+  .ant-dropdown-menu .ant-dropdown-menu-item {
+    font-family: 'Montserrat';
+    font-weight: 500;
+  }
+
+}
+
+.tooltip-text {
+  font-size: 14px;
+  font-family: 'Montserrat';
+  color: #6f7f94;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.ant-tooltip {
+  .ant-tooltip-inner {
+    color: #000000;
+    font-family: 'Montserrat';
+    width: fit-content;
+    font-weight: 500;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow:
+      0 6px 16px rgba(101, 101, 101, 0.08),
+      0 3px 6px -4px rgba(0, 0, 0, 0.9),
+      0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+}
+
+.ant-tooltip {
+  --antd-arrow-background-color: #fff !important;
+}
+
+.student-modal {
+  top: 50px;
+  width: 935px !important;
+  @media only screen and (min-width: 1260px) {
+    width: 1030px !important;
+  }
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #939393;
+    border-radius: 10px;
+  }
+}
+
+.student-modal .ant-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // max-height: 90vh;
+
+}
+
+.student-modal .ant-modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+// VisitorReport
+// Custom styles for the DatePicker when it's disabled
+.ant-picker-disabled {
+  background-color: white !important;
+
+  .ant-picker-input {
+    background-color: white !important;
+    cursor: not-allowed;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: white !important;
+  }
+}
