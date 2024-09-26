@@ -598,7 +598,7 @@ const InternationalReport = () => {
   return (
     <div>
       <div className="text-center text-3xl font-bold">
-        International Student Attendascdsscscscscscnce Report
+        International Student Attendance Report
       </div>
       <div className="flex gap-4 justify-end">
         {currentData.length > 0 && !tableLoader ? (
