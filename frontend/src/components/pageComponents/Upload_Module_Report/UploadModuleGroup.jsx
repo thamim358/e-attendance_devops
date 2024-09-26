@@ -46,7 +46,7 @@ const UploadModuleGroup = () => {
 
   return (
     <div className="flex flex-col justify-center items-center mt-28 bg-gray-100">
-      <div className="text-2xl font-semibold mb-4">Module Group Assignments</div>
+      <div className="text-2xl font-semibold mb-4">Module thamim ansari Group Assignments</div>
 
       <div className="bg-white justify-center shadow-lg rounded-xl p-8 w-full max-w-lg">
         <h4 className="text-xl font-medium mb-8">
