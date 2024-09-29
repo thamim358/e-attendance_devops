@@ -16,8 +16,7 @@ spec:
       - name: e-attendance
         image: thamim358/e_attendance:latest
         ports:
-        - containerPort: 8080
-        - containerPort: 5000
+        - containerPort: 8080  # Exposing container port 8080
 ---
 apiVersion: v1
 kind: Service
@@ -28,6 +27,6 @@ spec:
     app: e-attendance
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: LoadBalancer
+      port: 80               # Port exposed on the service
+      targetPort: 8080       # Port on the container to forward to
+  type: LoadBalancer          # LoadBalancer type service
