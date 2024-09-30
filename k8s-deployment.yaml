@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: e-attendance-backend
-        image: thamim358/e_attendance_backend:latest  # Adjust with your actual backend image
+        image: 221082168090.dkr.ecr.eu-north-1.amazonaws.com/e-attendance-backend:latest
         ports:
         - containerPort: 8080  # Exposing container port 8080 for backend
 
@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: e-attendance-frontend
-        image: thamim358/e_attendance_frontend:latest  # Adjust with your actual frontend image
+        image: 221082168090.dkr.ecr.eu-north-1.amazonaws.com/e-attendance-frontend:latest
         ports:
         - containerPort: 80  # Exposing container port 80 for frontend
 
