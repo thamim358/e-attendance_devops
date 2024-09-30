@@ -1,32 +1,68 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: e-attendance
+  name: e-attendance-backend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: e-attendance
+      app: e-attendance-backend
   template:
     metadata:
       labels:
-        app: e-attendance
+        app: e-attendance-backend
     spec:
       containers:
-      - name: e-attendance
-        image: thamim358/e_attendance:latest
+      - name: e-attendance-backend
+        image: thamim358/e_attendance_backend:latest  # Adjust with your actual backend image
         ports:
-        - containerPort: 8080  # Exposing container port 8080
+        - containerPort: 8080  # Exposing container port 8080 for backend
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: e-attendance-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: e-attendance-frontend
+  template:
+    metadata:
+      labels:
+        app: e-attendance-frontend
+    spec:
+      containers:
+      - name: e-attendance-frontend
+        image: thamim358/e_attendance_frontend:latest  # Adjust with your actual frontend image
+        ports:
+        - containerPort: 80  # Exposing container port 80 for frontend
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: e-attendance-service
+  name: e-attendance-backend-service
 spec:
   selector:
-    app: e-attendance
+    app: e-attendance-backend
   ports:
     - protocol: TCP
-      port: 80               # Port exposed on the service
-      targetPort: 8080       # Port on the container to forward to
-  type: LoadBalancer          # LoadBalancer type service
+      port: 80               # Port exposed on the service for backend
+      targetPort: 8080       # Port on the backend container
+  type: LoadBalancer          # LoadBalancer type service for backend
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: e-attendance-frontend-service
+spec:
+  selector:
+    app: e-attendance-frontend
+  ports:
+    - protocol: TCP
+      port: 80               # Port exposed on the service for frontend
+      targetPort: 80         # Port on the frontend container
+  type: LoadBalancer          # LoadBalancer type service for frontend
