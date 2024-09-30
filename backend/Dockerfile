@@ -11,7 +11,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code
-COPY backend/ .
+COPY . . 
 
 # Expose the application port (change if necessary)
 EXPOSE 5000
