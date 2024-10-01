@@ -7,10 +7,10 @@ from botocore.exceptions import ClientError
 
 
 def get_secrets():
-    secret_name = os.environ.get("SECRETS_NAME")
+    secret_name = os.environ.get("reports/secrets")
     region_name = os.environ.get("eu-north-1")
-    aws_access_key_id = os.environ.get("AKIAYRH5M3TUO3RMNQXF")
-    aws_secret_access_key = os.environ.get("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")
+    aws_access_key_id = os.environ.get("AKIATG6MGFMNDQJN2ZET")
+    aws_secret_access_key = os.environ.get("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")
 
     session = boto3.Session(
         aws_access_key_id=aws_access_key_id,
