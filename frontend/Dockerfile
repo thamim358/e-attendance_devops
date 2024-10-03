@@ -1,32 +1,29 @@
-# Use the official Node.js image as a base
-FROM node:16
+# Stage 1: Build the React app with Vite
+FROM node:16-alpine AS builder
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Environment variable for node memory limit
-ENV NODE_OPTIONS=--max_old_space_size=4096
-
-# Copy package.json and package-lock.json
+# Install dependencies
 COPY package*.json ./
 
-# Clean npm cache (optional)
-RUN npm cache clean --force
-
-# Install dependencies using npm ci for better caching
+# Install npm dependencies
 RUN npm ci --verbose
 
-# Copy the rest of the application code
+# Copy all files to the container
 COPY . .
 
-# Build the production assets
-RUN npm run build || exit 1
+# Build the app for production
+RUN npm run build
 
-# Install a lightweight web server to serve the static files (e.g., `serve`)
-RUN npm install -g serve
+# Stage 2: Serve the built files using nginx
+FROM nginx:alpine
 
-# Expose the desired port
-EXPOSE 3000
+# Copy the build output to the nginx HTML directory
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Command to serve the static files
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
