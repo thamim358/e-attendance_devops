@@ -1,11 +1,14 @@
 # Stage 1: Build the React app with Vite
-FROM node:16-alpine AS builder
+FROM node:16 AS builder
 
 # Set working directory
 WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
+
+
+RUN npm cache clean --force
 
 # Install npm dependencies
 RUN npm ci --verbose
