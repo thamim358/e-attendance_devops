@@ -4,7 +4,7 @@ from config.db import db
 
 class Attendance(db.Model):
 
-    __table_args__ = {"schema": "psb"}
+    __table_args__ = {"schema": "dbo"}
     __tablename__ = "attendance"
 
     attendance_id = db.Column(db.Integer, primary_key=True)
@@ -16,7 +16,7 @@ class Attendance(db.Model):
     leave_time = db.Column(db.DateTime)
     total_time = db.Column(db.Integer)
     module_id = db.Column(
-        db.String, db.ForeignKey("psb.module_master.module_code")
+        db.String, db.ForeignKey("dbo.module_master.module_code")
     )
     module = db.relationship(
         "Module", backref=db.backref("attendance", lazy=True)
@@ -36,7 +36,7 @@ class Attendance(db.Model):
     nric_fin = db.Column(db.String(255))
     # course_code = db.Column(db.String(255))
     course_code = db.Column(
-        db.String, db.ForeignKey("psb.course_master_temp.course_code")
+        db.String, db.ForeignKey("dbo.course_master_temp.course_code")
     )
     course = db.relationship(
         "CourseMasterTemp",
