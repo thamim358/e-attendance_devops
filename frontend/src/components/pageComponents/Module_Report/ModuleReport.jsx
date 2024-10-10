@@ -792,7 +792,7 @@ const ModuleReport = () => {
                 onClick={handleSearch}
                 disabled={moduleLoader}
               >
-                Search
+                Enter
               </button>
             </Tooltip>
           </div>
