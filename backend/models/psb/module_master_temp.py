@@ -3,7 +3,7 @@ from config.db import db
 
 
 class ModuleMasterTemp(db.Model):
-    __table_args__ = {"schema": "psb"}
+    __table_args__ = {"schema": "dbo"}
     __tablename__ = "module_master_temp"
 
     id = db.Column(db.Integer, primary_key=True)
